@@ -6,10 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Tables</title>
     <style>
+        /* th {
+            background-color: greenyellow;
+            color: white;
+        }
+
+        td {
+            background-color: rgb(216, 198, 174);
+            color: grey;
+            text-align: center;
+        } */
+
         table,
         td,
         th {
             border: 1px solid black;
+        }
+
+        .blue-color {
+            background-color: blue;
+            color: white;
+        }
+
+        .green-color {
+            background-color: green;
+            color: white;
+        }
+
+        .red-color {
+            background-color: red;
+            color: white;
+        }
+
+        td {
+            empty-cells: hide;
+            text-align: center;
         }
     </style>
 </head>
@@ -52,7 +83,7 @@
     </table> -->
 
 
-    <table>
+    <!-- <table>
         <tr>
             <th></th>
             <th>9am</th>
@@ -93,9 +124,96 @@
             <td>Sports</td>
             <td>Current Affairs</td>
         </tr>
+    </table> -->
+
+
+    <!-- <h1>Hello World</h1> -->
+
+
+    <!-- <table>
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Product Quality</th>
+                <th>Product Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Wheat</td>
+                <td>Good</td>
+                <td>200 Bags</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Rice</td>
+                <td>Good</td>
+                <td>250 Bags</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Sugar</td>
+                <td>Good</td>
+                <td>200 Bags</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Sugar</td>
+                <td>Good</td>
+                <td>200 Bags</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Sugar</td>
+                <td>Good</td>
+                <td>200 Bags</td>
+            </tr>
+            <tr>
+                <td>6 </td>
+                <td>Sugar</td>
+                <td>Good</td>
+                <td>200 Bags</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>21</td>
+                <td>Sugar</td>
+                <td>Good</td>
+                <td>1250 Bags</td>
+            </tr>
+        </tfoot>
+    </table> -->
+
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Education</th>
+            <th>Profession</th>
+        </tr>
+        <tr>
+            <td class="blue-color">Ali</td>
+            <td class="blue-color"></td>
+            <td class="blue-color"></td>
+            <td class="blue-color">Car Dealer</td>
+        </tr>
+        <tr>
+            <td class="green-color">Ali</td>
+            <td class="green-color"></td>
+            <td class="green-color"></td>
+            <td class="green-color">Car Dealer</td>
+        </tr>
+        <tr>
+            <td class="red-color">Ali</td>
+            <td class="red-color"></td>
+            <td class="red-color"></td>
+            <td class="red-color">H <br /> Hydrogen</td>
+        </tr>
     </table>
-
-
 
 
 </body>
