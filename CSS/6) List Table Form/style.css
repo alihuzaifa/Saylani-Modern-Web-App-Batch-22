@@ -1,0 +1,146 @@
+/* .box {
+    width: 100px;
+    height: 100px;
+    box-shadow: blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 10px -10px 0px -3px, rgb(31, 193, 27) 10px -10px, rgb(255, 255, 255) 20px -20px 0px -3px, rgb(255, 217, 19) 20px -20px, rgb(255, 255, 255) 30px -30px 0px -3px, rgb(255, 156, 85) 30px -30px, rgb(255, 255, 255) 40px -40px 0px -3px, rgb(255, 85, 85) 40px -40px;
+} */
+
+
+li {
+    /* list-style-type: decimal;
+    list-style-type: decimal-leading-zero;
+    list-style-type: lower-alpha;
+    list-style-type: upper-alpha;
+    list-style-type: lower-roman;
+    list-style-type: upper-roman;
+    list-style-position: outside;
+    list-style-position: inside; */
+
+    /* position type */
+    /* list-style: inside lower-greek;
+    border: 1px solid black; */
+
+
+    /* list-style-type: georgian;
+    list-style-position: inside;
+    list-style: inside lower-greek;
+    border: 1px solid black; */
+
+}
+
+
+
+table,
+th,
+td {
+    /* border: 1px solid black;
+    border-collapse: collapse; */
+
+    /* horizontal vertical */
+    /* border-spacing: 10px 30px;
+    background-color: red !important;
+
+    background-color: green; */
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    width: 200px;
+    height: 200px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(124, 49, 49);
+}
+
+input {
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: 190px;
+    height: 25px;
+    font-family: sans-serif;
+    border: none;
+    border-bottom: 1px solid  rgb(124, 49, 49);
+    outline: none;
+    cursor: alias;
+
+}
+
+
+
+
+/* CSS */
+.button-85 {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    display: block;
+    margin: 10px auto;
+}
+
+.button-85:before {
+    content: "";
+    background: linear-gradient(45deg,
+            #ff0000,
+            #ff7300,
+            #fffb00,
+            #48ff00,
+            #00ffd5,
+            #002bff,
+            #7a00ff,
+            #ff00c8,
+            #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button-85 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.button-85:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
