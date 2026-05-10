@@ -1,0 +1,32 @@
+body {
+    overflow-x: hidden !important;
+}
+
+/* Navbar */
+.nav-link {
+    color: #000 !important;
+}
+
+.form-control:focus {
+    box-shadow: none !important;
+    border: 1px solid #dee2e6 !important;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
+
+
+/* Services */
+.section-heading {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-text {
+    text-align: center;
+     margin-top: 20px;
+     font-size: 20px;
+}
