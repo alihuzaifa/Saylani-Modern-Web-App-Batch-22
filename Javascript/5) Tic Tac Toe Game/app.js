@@ -9,45 +9,63 @@ var box8 = document.getElementById("box8");
 var box9 = document.getElementById("box9");
 
 var text = "O";
-var count = 1;
+var count = 0;
 
 function game(input) {
+  textCondition();
+
+  textRendering(input);
+
+  winningChecker();
+
+  if (count === 9) {
+    alert("Reset");
+
+    reset();
+  }
+}
+
+function textCondition() {
   // Text Condition
   if (count % 2 === 0) {
     text = "X";
   } else {
     text = "O";
   }
+}
 
-  // Text rendering
+function textRendering(input) {
   if (box1.innerHTML === "" && input === "box1") {
     box1.innerHTML = text;
-  } else if (input === "box2") {
+    count++;
+  } else if (box2.innerHTML === "" && input === "box2") {
     box2.innerHTML = text;
-  } else if (input === "box3") {
+    count++;
+  } else if (box3.innerHTML === "" && input === "box3") {
     box3.innerHTML = text;
-  } else if (input === "box4") {
+    count++;
+  } else if (box4.innerHTML === "" && input === "box4") {
     box4.innerHTML = text;
-  } else if (input === "box5") {
+    count++;
+  } else if (box5.innerHTML === "" && input === "box5") {
     box5.innerHTML = text;
-  } else if (input === "box6") {
+    count++;
+  } else if (box6.innerHTML === "" && input === "box6") {
     box6.innerHTML = text;
-  } else if (input === "box7") {
+    count++;
+  } else if (box7.innerHTML === "" && input === "box7") {
     box7.innerHTML = text;
-  } else if (input === "box8") {
+    count++;
+  } else if (box8.innerHTML === "" && input === "box8") {
     box8.innerHTML = text;
-  } else if (input === "box9") {
+    count++;
+  } else if (box9.innerHTML === "" && input === "box9") {
     box9.innerHTML = text;
+    count++;
   }
+}
 
-  // Increment
-  count++;
-
-  // Game Winning Conditions
-  // 123 456 789 147 258 369 159 357
-
-  // Game Winning Conditions For O
-
+function winningChecker() {
   // Set 1
   if (
     box1.innerHTML === "O" &&
@@ -221,7 +239,7 @@ function reset() {
   box7.innerHTML = "";
   box8.innerHTML = "";
   box9.innerHTML = "";
-  count = 1;
+  count = 0;
 }
 
 // var myName = "Ali";
