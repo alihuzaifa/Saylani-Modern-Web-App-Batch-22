@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice Design</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="dice-container" id="dice-container">
+      <div class="dice dice-1">
+        <span class="dot center"></span>
+      </div>
+      <div class="dice dice-2 animate__animated animate__flip">
+        <span class="dot top-left"></span>
+        <span class="dot bottom-right"></span>
+      </div>
+      <div class="dice dice-3 animate__animated animate__flip">
+        <span class="dot top-left"></span>
+        <span class="dot center"></span>
+        <span class="dot bottom-right"></span>
+      </div>
+      <div class="dice dice-4 animate__animated animate__flip">
+        <span class="dot top-left"></span>
+        <span class="dot top-right"></span>
+        <span class="dot bottom-left"></span>
+        <span class="dot bottom-right"></span>
+      </div>
+      <div class="dice dice-5 animate__animated animate__flip">
+        <span class="dot top-left"></span>
+        <span class="dot top-right"></span>
+        <span class="dot center"></span>
+        <span class="dot bottom-left"></span>
+        <span class="dot bottom-right"></span>
+      </div>
+      <div class="dice dice-6 animate__animated animate__flip">
+        <span class="dot top-left"></span>
+        <span class="dot top-right"></span>
+        <span class="dot middle-left"></span>
+        <span class="dot middle-right"></span>
+        <span class="dot bottom-left"></span>
+        <span class="dot bottom-right"></span>
+      </div>
+    </div>
+
+    <button class="button-85" role="button" onclick="game()">Run</button>
+
+
+    <script src="app.js"></script>
+  </body>
+</html>
