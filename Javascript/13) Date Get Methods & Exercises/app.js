@@ -61,3 +61,44 @@
 // setInterval(greet, 2000)
 
 
+
+
+// var currentDate = new Date();
+// console.log(typeof currentDate);
+// console.log(String(currentDate).getDay());
+// console.log(currentDate.getDay());
+// console.log(currentDate.getMonth());
+// console.log(currentDate.getDate());
+// console.log(currentDate.getFullYear());
+// console.log(currentDate.getHours());
+// console.log(currentDate.getMinutes());
+// console.log(currentDate.getSeconds());
+// console.log(currentDate.getMilliseconds());
+// console.log(currentDate.getTime());
+
+
+// Get Methods 
+// Set Methods 
+
+
+
+// for (var i = 0; i < 10000; i++) {
+//     console.log(i);
+// }
+
+
+var count = 1;
+
+var loopId = setInterval(greet, 60000)
+
+function greet() {
+    console.log(count);
+    count++;
+
+    if (count > 10) {
+        clearInterval(loopId)
+    }
+    // for (var i = 0; i < 500; i++) {
+    // }
+    // console.log('Hello World');
+}
