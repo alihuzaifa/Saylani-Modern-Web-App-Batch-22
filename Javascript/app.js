@@ -4,30 +4,42 @@ var firstStatment = '';
 var operator = ''
 var lastStatment = '';
 
+// Block or Disable a condition
+
 function calculator(parameter) {
+
     // Operators Logic Handling
-    if (parameter === "+") {
-        operator = parameter
-    } else if (parameter === "-") {
-        operator = parameter
-    } else if (parameter === "x") {
-        operator = parameter
-    } else if (parameter === "/") {
-        operator = parameter
-    } else if (parameter === "%") {
-        operator = parameter
+    if (parameter === "+" && operator === "") {
+        operator = parameter;
+        output.innerHTML += parameter;
+    } else if (parameter === "-" && operator === "") {
+        operator = parameter;
+        output.innerHTML += parameter;
+    } else if (parameter === "x" && operator === "") {
+        operator = parameter;
+        output.innerHTML += parameter;
+    } else if (parameter === "/" && operator === "") {
+        operator = parameter;
+        output.innerHTML += parameter;
+    } else if (parameter === "%" && operator === "") {
+        operator = parameter;
+        output.innerHTML += parameter;
     }
 
     // Numbers Logic Handling
     else {
         if (operator === "") {
-            firstStatment += parameter
+            firstStatment += parameter;
+            output.innerHTML += parameter;
         } else {
-            lastStatment += parameter
+            lastStatment += parameter;
+            output.innerHTML += parameter;
         }
     }
 
-    output.innerHTML += parameter;
+
+    // output.innerHTML += parameter
+
 }
 
 
