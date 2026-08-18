@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Management</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <h2>School Admin</h2>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-link">
+          <span>🎓</span>
+          Student
+        </a>
+
+        <a href="teacher.html" class="nav-link">
+          <span>👨‍🏫</span>
+          Teacher
+        </a>
+
+        <a href="class.html" class="nav-link active">
+          <span>📚</span>
+          Class
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Topbar -->
+      <header class="topbar">
+        <div>
+          <h1>Class Management</h1>
+          <p>Manage your classes</p>
+        </div>
+
+        <div class="admin-profile">
+          <div class="profile-circle">A</div>
+          <span>Admin</span>
+        </div>
+      </header>
+
+      <!-- Page Content -->
+      <main class="container">
+        <!-- Button -->
+        <div class="top-bar">
+          <button class="add-btn" onclick="openModal()">+ Add Class</button>
+        </div>
+
+        <!-- Table -->
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody id="userTable"></tbody>
+        </table>
+      </main>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="userModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Add Class</h2>
+
+          <span class="close" onclick="closeModal()"> &times; </span>
+        </div>
+
+        <form>
+          <div class="form-group">
+            <label>Name</label>
+
+            <input type="text" id="name" placeholder="Enter name" required />
+          </div>
+
+          <button type="button" class="save-btn" onclick="saveClass()">
+            Save Class
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="global.js"></script>
+    <script src="class.js"></script>
+  </body>
+</html>
