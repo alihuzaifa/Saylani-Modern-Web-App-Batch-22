@@ -25,7 +25,7 @@ function validation(name, email, password, confirmPass) {
                 title: "Oops...",
                 text: "Please enter a valid name",
             });
-            return
+            return false
         }
     }
 
@@ -39,7 +39,7 @@ function validation(name, email, password, confirmPass) {
                 title: "Oops...",
                 text: "Please provide a valid email",
             });
-            return
+            return false
         }
     }
 
@@ -51,7 +51,7 @@ function validation(name, email, password, confirmPass) {
                 title: "Oops...",
                 text: "Please provide a strong password",
             });
-            return
+            return false
         }
     }
 
@@ -63,9 +63,12 @@ function validation(name, email, password, confirmPass) {
                 title: "Oops...",
                 text: "Please provide a matching password",
             });
-            return
+            return false
         }
     }
+
+    // koi error nahi aayi -> form valid hai
+    return true
 }
 
 // Close modal when clicking outside
