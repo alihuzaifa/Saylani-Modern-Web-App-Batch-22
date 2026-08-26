@@ -17,7 +17,7 @@ function validation(name, email, password, confirmPass) {
 
 
     // it will check that form has name field or not
-    if (name !== "") {
+    if (name !== false) {
         if (name.length < 3) {
             // alert("Please enter a valid name")
             Swal.fire({
@@ -30,7 +30,7 @@ function validation(name, email, password, confirmPass) {
     }
 
     // it will check that form has name field or not
-    if (email !== "") {
+    if (email !== false) {
         if (emailRegex.test(email)) {
 
         } else {
@@ -44,7 +44,7 @@ function validation(name, email, password, confirmPass) {
     }
 
 
-    if (password !== "") {
+    if (password !== false) {
         if (password.length < 6) {
             Swal.fire({
                 icon: "error",
@@ -56,15 +56,15 @@ function validation(name, email, password, confirmPass) {
     }
 
 
-    if (confirmPass !== "") {
+    if (confirmPass !== false) {
         if (confirmPass !== password) {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
                 text: "Please provide a matching password",
             });
+            return
         }
-        return
     }
 }
 
