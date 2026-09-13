@@ -418,22 +418,6 @@ body {
 }
 
 
-/* ================= TOAST MESSAGE ================= */
-
-.toast {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 10;
-
-    background: #1b7f3b;
-    color: white;
-
-    padding: 14px 20px;
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-}
-
 
 /* ================= RESPONSIVE ================= */
 

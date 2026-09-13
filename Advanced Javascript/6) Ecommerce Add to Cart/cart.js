@@ -44,7 +44,7 @@ const addToCart = (id, title, price, image) => {
   }
 
   saveCart(cart);
-  showMessage(`${title} added to cart`);
+  showMessage("Product added in your cart");
 };
 
 // Change quantity (+1 or -1). If quantity becomes 0, remove the product.
@@ -109,17 +109,17 @@ const updateCartCount = () => {
   }
 };
 
-// Small green message on the top right side
+// Small message on the top right side, made by SweetAlert
 const showMessage = (text) => {
-  const message = document.createElement("div");
-  message.className = "toast";
-  message.innerText = text;
-
-  document.body.appendChild(message);
-
-  setTimeout(() => {
-    message.remove();
-  }, 2000);
+  Swal.fire({
+    toast: true,
+    position: "top-end",
+    icon: "success",
+    title: text,
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+  });
 };
 
 // Run one time when the page opens
