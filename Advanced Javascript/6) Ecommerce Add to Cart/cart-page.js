@@ -32,14 +32,16 @@ const showCart = () => {
         </div>
 
         <div class="qty-box">
-          <button class="qty-btn" data-id="${item.id}" data-change="-1">-</button>
+          <button onclick="changeQuantity(${item.id}, -1)">-</button>
           <span>${item.quantity}</span>
-          <button class="qty-btn" data-id="${item.id}" data-change="1">+</button>
+          <button onclick="changeQuantity(${item.id}, 1)">+</button>
         </div>
 
         <p class="cart-item-total">$${(item.price * item.quantity).toFixed(2)}</p>
 
-        <button class="remove-btn" data-id="${item.id}">Remove</button>
+        <button class="remove-btn" onclick="removeFromCart(${item.id})">
+          Remove
+        </button>
       </div>`;
   }
 
@@ -51,19 +53,5 @@ const showCart = () => {
         <button class="buy-btn">Checkout</button>
       </div>`;
 };
-
-// One listener for all the buttons inside the cart
-cartContainer.addEventListener("click", (event) => {
-  const button = event.target;
-  const id = Number(button.dataset.id);
-
-  if (button.classList.contains("qty-btn")) {
-    changeQuantity(id, Number(button.dataset.change));
-  }
-
-  if (button.classList.contains("remove-btn")) {
-    removeFromCart(id);
-  }
-});
 
 showCart();
