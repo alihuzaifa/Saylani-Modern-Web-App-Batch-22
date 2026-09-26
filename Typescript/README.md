@@ -16,6 +16,8 @@ npm install -g typescript
 
 ## Step 2: Agar script disabled ho ya koi error aaye
 
+Agar Step 1 bina kisi error ke chal gaya hai to ye step **skip** kar dein aur seedha Step 3 par jayein.
+
 Agar aapko "running scripts is disabled on this system" jaisa error nazar aaye, to Administrator PowerShell mein ye command chalayein:
 
 ```powershell
@@ -24,6 +26,11 @@ Set-ExecutionPolicy Unrestricted
 
 - Jab poocha jaye to **A** likhein (Yes to All).
 - Phir **Enter** dabayein.
+- Ab installation command **dobara** chalayein:
+
+```powershell
+npm install -g typescript
+```
 
 > Note: agar aap zyada mehfooz tareeqa chahte hain to `Unrestricted` ki jagah `RemoteSigned` bhi likh sakte hain. Wo bhi isi tarah kaam karega.
 
