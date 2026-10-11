@@ -23,34 +23,7 @@ loginBtn.onclick = async () => {
     return;
   }
 
-  try {
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email: loginEmail.value,
-      password: loginPassword.value,
-    });
-
-    console.log("data", data);
-
-    // Supabase apni errors (jaise "Invalid login credentials", "Email not confirmed")
-    // throw nahi karta, try ke andar hi { error } me deta hai. Is liye yahan khud check karo.
-    if (error) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: error.message,
-      });
-    } else {
-      window.location.href = "dashboard.html";
-    }
-  } catch (err) {
-    // catch me sirf wo errors aati hain jo throw hon, jaise internet band ho
-    console.log("catch error", err);
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: err.message,
-    });
-  }
+  // Yahan Supabase ka login method aayega
 
   // function ke akhir me button wapis theek
   loginBtn.innerHTML = "Log in";
