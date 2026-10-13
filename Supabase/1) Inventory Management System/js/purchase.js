@@ -58,7 +58,10 @@ const getPurchases = async () => {
     return;
   }
 
-  data.forEach((purchase) => {
+  // for loop se har purchase ki ek row banao
+  for (let i = 0; i < data.length; i++) {
+    const purchase = data[i];
+
     purchaseTableBody.innerHTML += `
       <tr>
         <td>${purchase.product_name}</td>
@@ -67,7 +70,7 @@ const getPurchases = async () => {
         <td>Rs ${purchase.total}</td>
       </tr>
     `;
-  });
+  }
 };
 
 // ================= Save purchase =================

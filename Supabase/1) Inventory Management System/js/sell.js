@@ -41,12 +41,15 @@ const getProducts = async () => {
 
   sellProduct.innerHTML = `<option value="">Select product</option>`;
 
-  data.forEach((product) => {
+  // for loop se har product ka ek option banao
+  for (let i = 0; i < data.length; i++) {
+    const product = data[i];
+
     // option ke text me quantity bhi dikhao, taake pata ho kitna bacha hai
     sellProduct.innerHTML += `
       <option value="${product.name}">${product.name} (${product.quantity} in stock)</option>
     `;
-  });
+  }
 };
 
 // ================= Recent sales =================
@@ -69,7 +72,10 @@ const getSales = async () => {
     return;
   }
 
-  data.forEach((sale) => {
+  // for loop se har sale ki ek row banao
+  for (let i = 0; i < data.length; i++) {
+    const sale = data[i];
+
     sellTableBody.innerHTML += `
       <tr>
         <td>${sale.customer_name}</td>
@@ -78,7 +84,7 @@ const getSales = async () => {
         <td>${sale.quantity}</td>
       </tr>
     `;
-  });
+  }
 };
 
 // ================= Save sale =================
