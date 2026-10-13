@@ -1,4 +1,4 @@
-import { validation, productValidation } from "./validation.js";
+import { validation, productValidation, phoneValidation } from "./validation.js";
 
 // Sidebar navigation is in common.js
 
@@ -7,16 +7,15 @@ const sellForm = document.getElementById("sellForm");
 const sellCustomer = document.getElementById("sellCustomer");
 const sellPhone = document.getElementById("sellPhone");
 const sellProduct = document.getElementById("sellProduct");
-const sellAvailable = document.getElementById("sellAvailable");
 const sellQty = document.getElementById("sellQty");
-const sellPrice = document.getElementById("sellPrice");
-const sellDiscount = document.getElementById("sellDiscount");
-const sellPayment = document.getElementById("sellPayment");
-const sellDate = document.getElementById("sellDate");
-const sellTotal = document.getElementById("sellTotal");
 const sellClearBtn = document.getElementById("sellClearBtn");
 const sellSaveBtn = document.getElementById("sellSaveBtn");
 const sellTableBody = document.getElementById("sellTableBody");
+
+// ================= Clear =================
+sellClearBtn.onclick = () => {
+  sellForm.reset();
+};
 
 // ================= Save sale =================
 sellSaveBtn.onclick = () => {
@@ -26,11 +25,17 @@ sellSaveBtn.onclick = () => {
     return;
   }
 
+  const validatePhone = phoneValidation(sellPhone.value);
+  if (validatePhone === false) {
+    return;
+  }
+
+  // price aur date is form me nahi hain, is liye false
   const validateProduct = productValidation(
     sellProduct.value,
     sellQty.value,
-    sellPrice.value,
-    sellDate.value
+    false,
+    false
   );
 
   // validation false hui to yahin ruk jao
