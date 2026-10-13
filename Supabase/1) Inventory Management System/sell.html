@@ -43,7 +43,7 @@
           <h3>New sale</h3>
           <form id="sellForm" class="form-grid">
             <div>
-              <label for="sellCustomer">Customer</label>
+              <label for="sellCustomer">Customer name</label>
               <input
                 type="text"
                 id="sellCustomer"
@@ -51,11 +51,11 @@
               />
             </div>
             <div>
-              <label for="sellPhone">Phone</label>
-              <input type="tel" id="sellPhone" placeholder="Optional" />
+              <label for="sellPhone">Phone number</label>
+              <input type="tel" id="sellPhone" placeholder="03001234567" />
             </div>
             <div>
-              <label for="sellProduct">Product</label>
+              <label for="sellProduct">Product name</label>
               <select id="sellProduct">
                 <option value="">Select product</option>
                 <option>Rice 5kg</option>
@@ -65,44 +65,16 @@
               </select>
             </div>
             <div>
-              <label for="sellAvailable">Available</label>
-              <input type="text" id="sellAvailable" value="-" readonly />
-            </div>
-            <div>
               <label for="sellQty">Quantity</label>
               <input type="number" id="sellQty" placeholder="0" min="1" />
             </div>
-            <div>
-              <label for="sellPrice">Unit price (Rs)</label>
-              <input type="number" id="sellPrice" placeholder="0" min="0" />
-            </div>
-            <div>
-              <label for="sellDiscount">Discount (Rs)</label>
-              <input type="number" id="sellDiscount" placeholder="0" min="0" />
-            </div>
-            <div>
-              <label for="sellPayment">Payment</label>
-              <select id="sellPayment">
-                <option>Cash</option>
-                <option>Card</option>
-                <option>Bank transfer</option>
-                <option>Credit</option>
-              </select>
-            </div>
-            <div>
-              <label for="sellDate">Sale date</label>
-              <input type="date" id="sellDate" />
-            </div>
-            <div class="full row-between">
-              <p class="total">Total: <strong id="sellTotal">Rs 0</strong></p>
-              <div class="btn-group">
-                <button type="button" id="sellClearBtn" class="btn btn-light">
-                  Clear
-                </button>
-                <button type="button" id="sellSaveBtn" class="btn btn-primary">
-                  Save sale
-                </button>
-              </div>
+            <div class="full btn-group">
+              <button type="button" id="sellClearBtn" class="btn btn-light">
+                Clear
+              </button>
+              <button type="button" id="sellSaveBtn" class="btn btn-primary">
+                Save sale
+              </button>
             </div>
           </form>
         </div>
@@ -113,33 +85,29 @@
             <thead>
               <tr>
                 <th>Customer</th>
+                <th>Phone</th>
                 <th>Product</th>
                 <th>Qty</th>
-                <th>Payment</th>
-                <th>Total</th>
               </tr>
             </thead>
             <tbody id="sellTableBody">
               <tr>
                 <td>Ahmed</td>
+                <td>03001234567</td>
                 <td>Rice 5kg</td>
                 <td>10</td>
-                <td>Cash</td>
-                <td>Rs 12,000</td>
               </tr>
               <tr>
                 <td>Walk-in</td>
+                <td>-</td>
                 <td>Sugar 1kg</td>
                 <td>25</td>
-                <td>Cash</td>
-                <td>Rs 4,000</td>
               </tr>
               <tr>
                 <td>Bilal Store</td>
+                <td>03211234567</td>
                 <td>Tea 950g</td>
                 <td>6</td>
-                <td>Credit</td>
-                <td>Rs 7,500</td>
               </tr>
             </tbody>
           </table>

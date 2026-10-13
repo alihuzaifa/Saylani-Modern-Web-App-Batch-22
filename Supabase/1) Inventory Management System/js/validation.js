@@ -79,3 +79,15 @@ export const productValidation = (product, quantity, price, date) => {
   // koi error nahi aayi -> form valid hai
   return true;
 };
+
+// Sell form ke liye - Pakistani mobile number, 11 digits, 03 se shuru
+export const phoneValidation = (phone) => {
+  const digits = phone.replace(/[^0-9]/g, "");
+  if (digits.length !== 11 || !digits.startsWith("03")) {
+    showError("Please enter a valid phone number");
+    return false;
+  }
+
+  // koi error nahi aayi -> phone valid hai
+  return true;
+};
