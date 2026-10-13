@@ -41,25 +41,25 @@ const renderStock = () => {
   const searchText = stockSearch.value.trim().toLowerCase();
   const filterValue = stockFilter.value;
 
-  const filtered = allProducts.filter((product) => {
-    const status = getStatus(product.quantity);
-
-    if (filterValue !== "all" && status !== filterValue) {
-      return false;
-    }
-
-    return product.name.toLowerCase().includes(searchText);
-  });
-
   stockTableBody.innerHTML = "";
 
-  if (filtered.length === 0) {
-    stockTableBody.innerHTML = `<tr><td colspan="4">No products found</td></tr>`;
-    return;
-  }
+  // kitni rows bani, taake aakhir me pata ho kuch mila ya nahi
+  let shown = 0;
 
-  filtered.forEach((product) => {
+  // for loop se har product check karo: filter aur search par poora utre to row banao
+  for (let i = 0; i < allProducts.length; i++) {
+    const product = allProducts[i];
     const status = getStatus(product.quantity);
+
+    // filter "low" ya "out" ho aur product ka status wo na ho to ye product chhor do
+    if (filterValue !== "all" && status !== filterValue) {
+      continue;
+    }
+
+    // search ka text naam me na ho to ye product chhor do
+    if (!product.name.toLowerCase().includes(searchText)) {
+      continue;
+    }
 
     stockTableBody.innerHTML += `
       <tr>
@@ -69,7 +69,12 @@ const renderStock = () => {
         <td>${statusTag[status]}</td>
       </tr>
     `;
-  });
+    shown++;
+  }
+
+  if (shown === 0) {
+    stockTableBody.innerHTML = `<tr><td colspan="4">No products found</td></tr>`;
+  }
 };
 
 stockSearch.oninput = renderStock;
