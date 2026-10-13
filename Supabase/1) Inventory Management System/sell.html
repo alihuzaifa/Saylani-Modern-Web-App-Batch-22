@@ -58,10 +58,6 @@
               <label for="sellProduct">Product name</label>
               <select id="sellProduct">
                 <option value="">Select product</option>
-                <option>Rice 5kg</option>
-                <option>Cooking Oil 1L</option>
-                <option>Tea 950g</option>
-                <option>Shampoo 400ml</option>
               </select>
             </div>
             <div>
@@ -92,22 +88,7 @@
             </thead>
             <tbody id="sellTableBody">
               <tr>
-                <td>Ahmed</td>
-                <td>03001234567</td>
-                <td>Rice 5kg</td>
-                <td>10</td>
-              </tr>
-              <tr>
-                <td>Walk-in</td>
-                <td>-</td>
-                <td>Sugar 1kg</td>
-                <td>25</td>
-              </tr>
-              <tr>
-                <td>Bilal Store</td>
-                <td>03211234567</td>
-                <td>Tea 950g</td>
-                <td>6</td>
+                <td colspan="4">Loading...</td>
               </tr>
             </tbody>
           </table>
@@ -116,6 +97,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script type="module" src="js/common.js"></script>
     <script type="module" src="js/sell.js"></script>
   </body>
