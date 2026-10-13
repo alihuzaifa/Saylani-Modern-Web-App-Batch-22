@@ -22,7 +22,40 @@ resetBtn.onclick = async () => {
     return;
   }
 
-  // Yahan Supabase ka naya password set karne ka method aayega
+  try {
+    // Email wale link se aaye hain to Supabase ne khud session bana diya hota hai,
+    // is liye sirf naya password dena hai.
+    const { data, error } = await supabase.auth.updateUser({
+      password: newPassword.value,
+    });
+
+    console.log("data", data);
+
+    // Supabase apni errors (jaise "Auth session missing!" ya purana password hi dobara dena)
+    // throw nahi karta, try ke andar hi { error } me deta hai. Is liye yahan khud check karo.
+    if (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: error.message,
+      });
+    } else {
+      await Swal.fire({
+        icon: "success",
+        title: "Password updated",
+        text: "Please log in with your new password",
+      });
+      window.location.href = "login.html";
+    }
+  } catch (err) {
+    // catch me sirf wo errors aati hain jo throw hon, jaise internet band ho
+    console.log("catch error", err);
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: err.message,
+    });
+  }
 
   // function ke akhir me button wapis theek
   resetBtn.innerHTML = "Reset password";
