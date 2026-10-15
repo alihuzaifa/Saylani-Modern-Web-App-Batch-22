@@ -18,7 +18,6 @@
           <button type="button" id="navPurchase" class="nav-link">
             Purchase
           </button>
-          <button type="button" id="navStock" class="nav-link">Stock</button>
           <button type="button" id="navSell" class="nav-link active">
             Sell
           </button>
@@ -58,6 +57,10 @@
               <label for="sellProduct">Product name</label>
               <select id="sellProduct">
                 <option value="">Select product</option>
+                <option>Rice 5kg</option>
+                <option>Cooking Oil 1L</option>
+                <option>Tea 950g</option>
+                <option>Shampoo 400ml</option>
               </select>
             </div>
             <div>
@@ -88,7 +91,7 @@
             </thead>
             <tbody id="sellTableBody">
               <tr>
-                <td colspan="4">Loading...</td>
+                <td colspan="4">No sales yet</td>
               </tr>
             </tbody>
           </table>
@@ -97,7 +100,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script type="module" src="js/common.js"></script>
     <script type="module" src="js/sell.js"></script>
   </body>

@@ -11,6 +11,7 @@ const showError = (text) => {
   });
 };
 
+// Login, signup, forgot aur reset ke liye
 export const validation = (name, email, password, confirmPass) => {
   // it will check that form has name field or not
   if (name !== false) {
@@ -46,8 +47,8 @@ export const validation = (name, email, password, confirmPass) => {
   return true;
 };
 
-// Purchase aur sell form ke liye - same pattern, jo field nahi us ki jagah false
-export const productValidation = (product, quantity, price, date) => {
+// Purchase aur sell form ke liye - same pattern, jo field form me nahi us ki jagah false
+export const productValidation = (product, quantity, price) => {
   if (product !== false) {
     if (product.trim() === "") {
       showError("Please select or enter a product");
@@ -65,13 +66,6 @@ export const productValidation = (product, quantity, price, date) => {
   if (price !== false) {
     if (price === "" || Number(price) <= 0) {
       showError("Please enter a valid price");
-      return false;
-    }
-  }
-
-  if (date !== false) {
-    if (date === "") {
-      showError("Please select a date");
       return false;
     }
   }
