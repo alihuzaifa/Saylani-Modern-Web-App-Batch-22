@@ -1,4 +1,4 @@
-// Sidebar navigation is in common.js
+import "./common.js";
 
 // ================= Get elements =================
 const totalProducts = document.getElementById("totalProducts");

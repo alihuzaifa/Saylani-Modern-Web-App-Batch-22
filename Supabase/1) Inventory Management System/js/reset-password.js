@@ -1,4 +1,5 @@
-import supabase from "./credential.js";
+﻿import supabase from "./credential.js";
+import Swal from "./alert.js";
 import { validation } from "./validation.js";
 
 // ================= Get elements =================
@@ -29,8 +30,6 @@ resetBtn.onclick = async () => {
       password: newPassword.value,
     });
 
-    console.log("data", data);
-
     // Supabase apni errors (jaise "Auth session missing!" ya purana password hi dobara dena)
     // throw nahi karta, try ke andar hi { error } me deta hai. Is liye yahan khud check karo.
     if (error) {
@@ -49,7 +48,6 @@ resetBtn.onclick = async () => {
     }
   } catch (err) {
     // catch me sirf wo errors aati hain jo throw hon, jaise internet band ho
-    console.log("catch error", err);
     Swal.fire({
       icon: "error",
       title: "Oops...",

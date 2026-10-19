@@ -1,4 +1,5 @@
-import supabase from "./credential.js";
+﻿import supabase from "./credential.js";
+import Swal from "./alert.js";
 import { validation } from "./validation.js";
 
 // ================= Get elements =================
@@ -29,8 +30,6 @@ loginBtn.onclick = async () => {
       password: loginPassword.value,
     });
 
-    console.log("data", data);
-
     // Supabase apni errors (jaise "Invalid login credentials", "Email not confirmed")
     // throw nahi karta, try ke andar hi { error } me deta hai. Is liye yahan khud check karo.
     if (error) {
@@ -44,7 +43,6 @@ loginBtn.onclick = async () => {
     }
   } catch (err) {
     // catch me sirf wo errors aati hain jo throw hon, jaise internet band ho
-    console.log("catch error", err);
     Swal.fire({
       icon: "error",
       title: "Oops...",

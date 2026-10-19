@@ -1,4 +1,5 @@
-import supabase from "./credential.js";
+﻿import supabase from "./credential.js";
+import Swal from "./alert.js";
 import { validation } from "./validation.js";
 
 // ================= Get elements =================
@@ -29,8 +30,6 @@ sendCodeBtn.onclick = async () => {
       redirectTo: new URL("reset-password.html", window.location.href).href,
     });
 
-    console.log("data", data);
-
     // Supabase apni errors (jaise "email rate limit exceeded") throw nahi karta,
     // try ke andar hi { error } me deta hai. Is liye yahan khud check karo.
     // Note: jo email registered hi nahi, us par bhi error nahi aata (security ke liye).
@@ -49,7 +48,6 @@ sendCodeBtn.onclick = async () => {
     }
   } catch (err) {
     // catch me sirf wo errors aati hain jo throw hon, jaise internet band ho
-    console.log("catch error", err);
     Swal.fire({
       icon: "error",
       title: "Oops...",

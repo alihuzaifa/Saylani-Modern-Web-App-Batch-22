@@ -101,6 +101,45 @@ input[readonly] {
   align-items: center;
 }
 
+/* table ke edit / delete buttons - purchase aur sell dono me */
+.action-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-edit,
+.btn-delete {
+  padding: 6px 14px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-edit {
+  background: #eff6ff;
+  color: var(--primary);
+  border-color: #bfdbfe;
+}
+
+.btn-edit:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.btn-delete {
+  background: #fef2f2;
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+.btn-delete:hover {
+  background: #dc2626;
+  color: var(--white);
+}
+
 .row-between {
   display: flex;
   justify-content: space-between;

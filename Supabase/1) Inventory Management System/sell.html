@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -50,22 +50,18 @@
               />
             </div>
             <div>
-              <label for="sellPhone">Phone number</label>
-              <input type="tel" id="sellPhone" placeholder="03001234567" />
-            </div>
-            <div>
-              <label for="sellProduct">Product name</label>
+              <label for="sellProduct">Product (from purchases)</label>
               <select id="sellProduct">
                 <option value="">Select product</option>
-                <option>Rice 5kg</option>
-                <option>Cooking Oil 1L</option>
-                <option>Tea 950g</option>
-                <option>Shampoo 400ml</option>
               </select>
             </div>
             <div>
               <label for="sellQty">Quantity</label>
               <input type="number" id="sellQty" placeholder="0" min="1" />
+            </div>
+            <div>
+              <label for="sellPrice">Price</label>
+              <input type="number" id="sellPrice" placeholder="0" min="1" />
             </div>
             <div class="full btn-group">
               <button type="button" id="sellClearBtn" class="btn btn-light">
@@ -84,14 +80,16 @@
             <thead>
               <tr>
                 <th>Customer</th>
-                <th>Phone</th>
                 <th>Product</th>
                 <th>Qty</th>
+                <th>Price</th>
+                <th>Total Price</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody id="sellTableBody">
               <tr>
-                <td colspan="4">No sales yet</td>
+                <td colspan="6">No sales yet</td>
               </tr>
             </tbody>
           </table>
@@ -99,8 +97,6 @@
       </main>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="module" src="js/common.js"></script>
     <script type="module" src="js/sell.js"></script>
   </body>
 </html>
