@@ -13,6 +13,12 @@ input:disabled {
   color: var(--text);
 }
 
+/* table: sab columns barabar chaude */
+table {
+  table-layout: fixed;
+  min-width: 600px;
+}
+
 @media (max-width: 800px) {
   .form-grid {
     grid-template-columns: 1fr;

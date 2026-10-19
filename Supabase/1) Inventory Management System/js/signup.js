@@ -1,7 +1,6 @@
-import supabase from "./credential.js";
+﻿import supabase from "./credential.js";
+import Swal from "./alert.js";
 import { validation } from "./validation.js";
-
-console.log(supabase);
 
 // ================= Get elements =================
 const signupName = document.getElementById("signupName");
@@ -42,8 +41,6 @@ signupBtn.onclick = async () => {
       password: signupPassword.value,
     });
 
-    console.log("data", data);
-
     // Supabase apni errors (jaise "User already registered") throw nahi karta,
     // try ke andar hi { error } me wapis deta hai. Is liye catch tak nahi pohonchti,
     // yahan khud check karna parta hai.
@@ -70,7 +67,6 @@ signupBtn.onclick = async () => {
     }
   } catch (err) {
     // catch me sirf wo errors aati hain jo throw hon, jaise internet band ho
-    console.log("catch error", err);
     Swal.fire({
       icon: "error",
       title: "Oops...",
