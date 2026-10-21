@@ -1,4 +1,5 @@
 ﻿import supabase from "./credential.js";
+import "./guest.js"; // login hai to dashboard par bhej do
 import Swal from "./alert.js";
 import { validation } from "./validation.js";
 
