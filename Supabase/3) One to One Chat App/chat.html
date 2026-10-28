@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1b3a6b">
+  <title>Batch 22 Chat</title>
+  <link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+
+  <div class="shell" id="appScreen">
+    <aside class="side" id="side">
+      <div class="side-top">
+        <strong>Batch 22 Chat</strong>
+        <button type="button" class="signout" id="switchBtn">Switch user</button>
+      </div>
+      <input type="search" id="searchInput" class="search" placeholder="Search people">
+      <div class="people" id="peopleList"></div>
+    </aside>
+
+    <section class="chat" id="chatSection">
+      <div class="chat-empty" id="chatEmpty">Select someone from the list to start chatting</div>
+
+      <div class="chat-open" id="chatOpen" hidden>
+        <header class="chat-head">
+          <button type="button" class="backbtn" id="chatBack" aria-label="Back">&larr;</button>
+          <strong id="chatWithName"></strong>
+        </header>
+        <div class="messages" id="messagesList"></div>
+        <form id="messageForm" class="message-form">
+          <input type="text" id="messageInput" placeholder="Type a message" autocomplete="off" required>
+          <button type="submit" class="btn primary">Send</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="js/chat.js"></script>
+</body>
+</html>
