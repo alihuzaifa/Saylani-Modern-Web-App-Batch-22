@@ -1,3 +1,0 @@
-import Swal from "https://cdn.jsdelivr.net/npm/sweetalert2@11/+esm";
-
-export default Swal;
