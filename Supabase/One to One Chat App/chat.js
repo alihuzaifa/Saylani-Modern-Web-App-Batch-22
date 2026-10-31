@@ -14,18 +14,27 @@ if (!myId) {
 
 let otherId = null;
 
-// apna naam + baqi users
 async function loadUsers() {
   try {
-    console.log("loadUsers: apna naam aur baqi users supabase se lao, myId =", myId);
-    const me = { name: "" }; // supabase se apna user yahan aayega
-    meName.innerHTML = "You: " + me.name;
+    const { data, error } = await supabase
+      .from("users")
+      .select("*")
+      .eq("id", myId);
 
-    const data = []; // supabase se baqi users yahan aayenge
+    const other = await supabase.from("users").select("*").neq("id", myId);
+
+    if (error) {
+      window.location.href = "users.html";
+      return false;
+    } else {
+      meName.innerHTML = data[0].name;
+    }
+
+    const otherUsers = other.data;
 
     otherList.innerHTML = "";
-    for (let i = 0; i < data.length; i++) {
-      otherList.innerHTML += `<li id="${data[i].id}">${data[i].name}</li>`;
+    for (let i = 0; i < otherUsers.length; i++) {
+      otherList.innerHTML += `<li id="${otherUsers[i].id}">${otherUsers[i].name}</li>`;
     }
   } catch (err) {
     alert(err.message);
@@ -37,14 +46,22 @@ async function openChat(e) {
     otherId = Number(e.target.id);
     chatWith.innerHTML = e.target.innerHTML;
 
-    console.log("openChat: messages supabase se lao, otherId =", otherId);
-    const data = []; // supabase se messages yahan aayenge
+    const { data, error } = await supabase
+      .from("messages")
+      .select("*")
+      .or(
+        `and(sender_id.eq.${myId},receiver_id.eq.${otherId}),and(sender_id.eq.${otherId},receiver_id.eq.${myId})`,
+      );
+    if (error) {
+      return false;
+    }
 
     messagesBox.innerHTML = "";
     for (let i = 0; i < data.length; i++) {
       const m = data[i];
-      const myMessage = m.sender_id === myId && m.receiver_id === otherId;
-      const otherPersonMessage = m.sender_id === otherId && m.receiver_id === myId;
+      const myMessage = m.sender_id == myId && m.receiver_id == otherId;
+      const otherPersonMessage =
+        m.sender_id == otherId && m.receiver_id == myId;
       if (myMessage || otherPersonMessage) {
         const cls = myMessage ? "mine" : "";
         messagesBox.innerHTML += `<li class="${cls}">${m.content}</li>`;
@@ -57,13 +74,24 @@ async function openChat(e) {
 
 async function sendMessage() {
   if (textInput.value.trim() === "") {
+    alert("Please fill the input field");
     return false;
   } else if (!otherId) {
     alert("Pehle user select karein");
   } else {
     try {
-      console.log("sendMessage: supabase mein insert karo", { sender_id: myId, receiver_id: otherId, content: textInput.value });
-      textInput.value = "";
+      const { error } = await supabase.from("messages").insert({
+        sender_id: myId,
+        receiver_id: otherId,
+        content: textInput.value,
+      });
+      if (error) {
+        alert(error.message);
+        return false;
+      } else {
+        alert("Message Send Successfully");
+        textInput.value = "";
+      }
     } catch (err) {
       alert(err.message);
     }
@@ -72,6 +100,8 @@ async function sendMessage() {
 
 // naya message aaye to ye chalta hai
 function onNewMessage(payload) {
+  console.log("payload", payload);
+
   const m = payload.new;
   const myMessage = m.sender_id === myId && m.receiver_id === otherId;
   const otherPersonMessage = m.sender_id === otherId && m.receiver_id === myId;
@@ -82,10 +112,18 @@ function onNewMessage(payload) {
 }
 
 function listenMessages() {
-  try {
-  } catch (err) {
-    alert(err.message);
-  }
+  supabase
+    .channel("chat")
+    .on(
+      "postgres_changes",
+      {
+        event: "INSERT",
+        schema: "public",
+        table: "messages",
+      },
+      onNewMessage,
+    )
+    .subscribe();
 }
 
 loadUsers();
