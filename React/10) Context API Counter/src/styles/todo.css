@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f6fb;
+  color: #222;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 650px;
+  margin: auto;
+}
+
+header {
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+header p {
+  color: #888;
+  font-size: 14px;
+}
+
+.todo-card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+.input-group input:focus {
+  border-color: #635bff;
+}
+
+.add-btn {
+  background: #635bff;
+  color: white;
+  border: none;
+  padding: 0 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.task-info {
+  flex: 1;
+}
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.edit-btn,
+.delete-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px;
+}
+
+.edit-btn:hover {
+  color: #635bff;
+}
+
+.delete-btn:hover {
+  color: #ef4444;
+}
+
+.priority {
+  font-size: 11px;
+  padding: 5px 9px;
+  border-radius: 20px;
+}
+
+.priority.high {
+  background: #fff0e8;
+  color: #e77a35;
+}
+
+.priority.medium {
+  background: #fff8db;
+  color: #b58a00;
+}
+
+.priority.low {
+  background: #e8f8ed;
+  color: #269b53;
+}
+
+.delete-btn {
+  border: none;
+  background: transparent;
+  color: #bbb;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  color: #ef4444;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 25px 12px;
+  }
+
+  .todo-card {
+    padding: 18px;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .add-btn {
+    padding: 13px;
+  }
+}
