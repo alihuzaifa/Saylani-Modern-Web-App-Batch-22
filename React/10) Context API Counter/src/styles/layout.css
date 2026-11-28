@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f5f9;
+}
+
+.main-layout {
+  margin-left: 250px;
+  min-height: 100vh;
+}
+
+.main-content {
+  padding: 30px;
+}
+
+.main-content h1 {
+  color: #1e293b;
+  margin-bottom: 15px;
+}
+
+.main-content p {
+  color: #64748b;
+}
