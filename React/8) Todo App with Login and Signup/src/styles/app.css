@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f2f4f8;
+  color: #222;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #222;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #444;
+}
+
+button.danger {
+  background: #ff4757;
+}
+
+input {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.error {
+  color: #ff4757;
+  font-size: 13px;
+}
+
+/* Login and Signup */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-page .card {
+  width: 340px;
+}
+
+.switch {
+  font-size: 13px;
+  text-align: center;
+}
+
+/* Todo */
+.todo-page {
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top h1 {
+  font-size: 22px;
+}
+
+.add {
+  display: flex;
+  gap: 8px;
+}
+
+.add input {
+  flex: 1;
+}
+
+.empty {
+  color: #999;
+  text-align: center;
+  font-size: 14px;
+}
+
+.list {
+  list-style: none;
+}
+
+.list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.list li span {
+  word-break: break-word;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
